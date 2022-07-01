@@ -23,6 +23,10 @@ config :wow_data, WoWDataWeb.Endpoint,
 # In test we don't send emails.
 config :wow_data, WoWData.Mailer, adapter: Swoosh.Adapters.Test
 
+config :wow_data, :client, impl: WoWData.Api.ClientBehaviourMock
+
+config :wow_data, :access_token_request, impl: WoWData.Api.AccessTokenBehaviourMock
+
 # Print only warnings and errors during test
 config :logger, level: :warn
 
