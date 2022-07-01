@@ -50,6 +50,15 @@ config :wow_data, WoWDataWeb.Endpoint,
 # configured to run both http and https servers on
 # different ports.
 
+config :wow_data, :access_token,
+  user: System.get_env("ACCESS_TOKEN_USER"),
+  password: System.get_env("ACCESS_TOKEN_PASS")
+
+
+config :wow_data, :client, impl: WoWData.Api.Client
+
+config :wow_data, :access_token_request, impl: WoWData.Api.AccessTokenRequest
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
